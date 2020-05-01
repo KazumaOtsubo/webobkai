@@ -72,7 +72,8 @@ public class DeleteServlet extends HttpServlet {
 						response.addCookie(cookies[i]);
 					}
 				}
-				response.sendRedirect("/webobkai/check");
+				RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+				rd.forward(request, response);
 				return;
 		}catch   (SQLException | ClassNotFoundException e ){
 			e.printStackTrace();

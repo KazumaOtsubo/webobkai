@@ -16,6 +16,7 @@
 </title>
 </head>
 <body>
+<div class="container">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
 	<h1><br><br><br><br>
@@ -28,13 +29,14 @@
 		<form action="./check" method="post">
 				<div class="input-group center block">
 			<span class="input-group-addon">パスワード</span>
-			<input type="text" name="password" class="form-control" placeholder="お伝えしたパスワードを入力してください">
+			<input type="text" name="password" class="form-control" placeholder="お伝えしたパスワードを入力してください" required>
 		</div>
 		<p></p>
 		<div class="input-group center block">
 			<span class="input-group-addon">ユーザー名</span>
 			<input type="text" name="name" class="form-control" placeholder="名前かニックネームを入力してください">
 		</div>
+		<h6 ><font color="red">※退室しない限り,2回目以降は名前の入力不要です</font></h6>
 		<br><br>
 		<div class="btn-group" role="group">
 	<button type="submit" class="btn btn-default">送信</button>
@@ -45,6 +47,6 @@
 	</div>
 	</div>
 	<div class="col-md-4"></div>
-
+</div>
 </body>
 </html>

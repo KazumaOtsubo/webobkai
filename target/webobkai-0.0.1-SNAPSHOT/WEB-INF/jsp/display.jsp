@@ -14,6 +14,7 @@
 <title>show your room</title>
 </head>
 <body>
+<div class="container">
 <div class="col-md-4"></div>
 <div class="col-md-4">
 <br><br><br><br>
@@ -43,9 +44,9 @@
 </c:if>
 
 <c:if test = "${participant.roomNumber == 'A'}">
-<div class="panel panel-default">
+<div class="panel panel-warning">
 	<div class="panel-heading">
-		ルームＢ
+		ルームA
 	</div>
 	<div class="panel-body">
 		URL：<a href="https://us04web.zoom.us/j/71148583708">https://us04web.zoom.us/j/71148583708</a>
@@ -111,7 +112,7 @@
 	 <c:if test = "${participant.roomNumber == 'C'}">
 <div class="panel panel-warning">
 	<div class="panel-heading">
-		ルームＢ
+		ルームC
 	</div>
 	<div class="panel-body">
 		URL：<a href="https://us04web.zoom.us/j/72423078625">https://us04web.zoom.us/j/72423078625</a>
@@ -144,7 +145,7 @@
 	 <c:if test = "${participant.roomNumber == 'D'}">
 <div class="panel panel-warning">
 	<div class="panel-heading">
-		ルームＢ
+		ルームD
 	</div>
 	<div class="panel-body">
 		URL：<a href="https://us04web.zoom.us/j/79595812583">https://us04web.zoom.us/j/79595812583</a>
@@ -170,7 +171,7 @@
 	 </tbody>
 </table>
 <div class="panel-footer">
-		このアプリ、シンプルに見えるけど結構大変だったからね！！
+		このアプリ、シンプルに見えるけど結構大変だったからね！！<br>
 	</div>
 </div>
 	 </c:if>
@@ -178,9 +179,11 @@
 	 	<div class="btn-group" role="group">
 			<button type="submit" class="btn btn-danger" name="number" value="${participant.number }">退室</button>
 		</div>
+		<h6 ><font color="red">※名前の入力ミスや急用で参加できなくなったときに押してください</font></h6>
 	</form>
 	 <p class="text-right">現在の参加人数：<c:out value="${participants.size()}"></c:out></p>
 	 </div>
 	 <div class="col-md-4"></div>
+	 </div>
 </body>
 </html>
