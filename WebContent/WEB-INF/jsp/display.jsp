@@ -159,8 +159,8 @@
 				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
 				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
 
-				<td><c:out value="${participant.participantName}"/></td>
-				<td><c:out value="${participant.roomNumber}"/></td>
+				<td><c:out value="${participa.participantName}"/></td>
+				<td><c:out value="${participa.roomNumber}"/></td>
 				</tr>
 			</c:if>
 		</c:forEach>
@@ -189,7 +189,7 @@
 	</thead>
 	<tbody>
 		<c:forEach var="participa" items="${participants}">
-			<c:if test="${participa.roomNumber=='B' }">
+			<c:if test="${participa.roomNumber=='D' }">
 				<tr>
 				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
 				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
@@ -201,8 +201,8 @@
 				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
 				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
 
-				<td><c:out value="${participant.participantName}"/></td>
-				<td><c:out value="${participant.roomNumber}"/></td>
+				<td><c:out value="${participa.participantName}"/></td>
+				<td><c:out value="${participa.roomNumber}"/></td>
 				</tr>
 			</c:if>
 		</c:forEach>
