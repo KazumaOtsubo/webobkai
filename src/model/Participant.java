@@ -1,12 +1,24 @@
 package model;
 
+import java.sql.Timestamp;
+
 public class Participant {
+	private int id;
+
+	private String password;
 
 	private int number;
 
 	private String participantName;
 
 	private String roomNumber;
+
+	private  int deleteflag;
+
+	private Timestamp updateAt;
+
+	private int grade;
+
 
 	public Participant() {
 
@@ -21,6 +33,39 @@ public class Participant {
 		this.number = number;
 		this.participantName = participantName;
 		this.roomNumber = roomNumber;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getDeleteflag() {
+		return deleteflag;
+	}
+
+	public void setDeleteflag(int deleteflag) {
+		this.deleteflag = deleteflag;
+	}
+
+	public Timestamp getUpdateAt() {
+		return updateAt;
+	}
+
+	public void setUpdateAt(Timestamp updateAt) {
+		this.updateAt = updateAt;
 	}
 
 	public int getNumber() {
@@ -45,5 +90,13 @@ public class Participant {
 
 	public void setRoomNumber(String roomNumber) {
 		this.roomNumber = roomNumber;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
 	}
 }

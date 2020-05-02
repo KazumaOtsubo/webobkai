@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,32 +45,33 @@ public class DeleteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String number = request.getParameter("number");
 
-		if(number != null) {
+		if(request.getParameter("id") != null) {
 			String url = "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_791ec9286655973?useSSL=false&characterEncoding=UTF-8&serverTimezone=JST";
 			String user = "b887e48668536b";
 			String pass = "6c9e7bf9";
 
+//			String url = "jdbc:mysql://localhost:3306/example?useSSL=false&characterEncoding=UTF-8&serverTimezone=JST";
+//			String user = "root";
+//			String pass = "root";
+			int id = Integer.parseInt(request.getParameter("id"));
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection(url, user, pass);
 
-				System.out.println("kokomade");
-
 				DistributerDao dao = new DistributerDao(con);
 
-				dao.deleteParticipant(Integer.parseInt(number));
+				dao.deleteParticipant(id);
 
-				Cookie cookies[] = request.getCookies();
-				if(cookies != null) {
-					for(int i = 0; i < cookies.length; i++) {
-
-						// クッキーの有効期間を0秒に設定する
-						cookies[i].setMaxAge(0);
-						response.addCookie(cookies[i]);
-					}
-				}
+//				Cookie cookies[] = request.getCookies();
+//				if(cookies != null) {
+//					for(int i = 0; i < cookies.length; i++) {
+//
+//						// クッキーの有効期間を0秒に設定する
+//						cookies[i].setMaxAge(0);
+//						response.addCookie(cookies[i]);
+//					}
+//				}
 				RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 				rd.forward(request, response);
 				return;

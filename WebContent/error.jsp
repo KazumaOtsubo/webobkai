@@ -22,9 +22,17 @@
 		ERROR
 	</div>
 	<div class="panel-body">
-		パスワードが違います
+		パスワードが違います<br>
+		OR<br>
+		名前がすでに使われています<br>
+		OR<br>
+		初回ログイン後に更新されました<br>
+		↑対応しきれませんでした
 	</div>
 </div>
+<form action="index.jsp" method="post">
+<button type="submit" class="btn btn-default">ログインページへ</button>
+</form>
 	</div>
 	<div class="col-md-4"></div>
 </body>

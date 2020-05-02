@@ -18,7 +18,7 @@
 <div class="container">
 <div class="col-md-4"></div>
 <div class="col-md-4">
-<br><br><br><br>
+<br><br>
 <c:if test="${error == null }">
 <div class="panel panel-success">
 	<div class="panel-heading lead">
@@ -28,9 +28,10 @@
 	<div class="panel-body">
 		あなたと同じ部屋の参加者は下に示しています<br>
 		下に書いてあるリンクがあなたの部屋へのリンクです<br>
-		なんかおかしいことがあったら、大坪に連絡ください
+		なんかおかしいことがあったら、大坪に連絡ください<br>
 	</div>
 </div>
+	<div class="alert alert-info" role="alert">開始時刻は午後19時です！</div>
 </c:if>
 <c:if test="${error != null }">
 <div class="panel panel-danger">
@@ -55,18 +56,27 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>番号</th>
+			<th>学年</th>
 			<th>名前</th>
 			<th>部屋の名前</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="participant" items="${participants}">
-			<c:if test="${participant.roomNumber=='A' }">
+		<c:forEach var="participa" items="${participants}">
+			<c:if test="${participa.roomNumber=='A' }">
 				<tr>
-				<td><c:out value="${participant.number}"/></td>
-				<td><c:out value="${participant.participantName}"/></td>
-				<td><c:out value="${participant.roomNumber}"/></td>
+				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
+				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
+				<c:if test="${participa.grade == 3}"><td><c:out value="３年"/></td></c:if>
+				<c:if test="${participa.grade == 4}"><td><c:out value="４年"/></td></c:if>
+				<c:if test="${participa.grade == 5}"><td><c:out value="M1"/></td></c:if>
+				<c:if test="${participa.grade == 6}"><td><c:out value="OB１年"/></td></c:if>
+				<c:if test="${participa.grade == 7}"><td><c:out value="OB２年"/></td></c:if>
+				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
+				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
+
+				<td><c:out value="${participa.participantName}"/></td>
+				<td><c:out value="${participa.roomNumber}"/></td>
 				</tr>
 			</c:if>
 		</c:forEach>
@@ -88,18 +98,27 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>番号</th>
+			<th>学年</th>
 			<th>名前</th>
 			<th>部屋の名前</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="participant" items="${participants}">
-			<c:if test="${participant.roomNumber=='B' }">
+		<c:forEach var="participa" items="${participants}">
+			<c:if test="${participa.roomNumber=='B' }">
 				<tr>
-				<td><c:out value="${participant.number}"/></td>
-				<td><c:out value="${participant.participantName}"/></td>
-				<td><c:out value="${participant.roomNumber}"/></td>
+				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
+				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
+				<c:if test="${participa.grade == 3}"><td><c:out value="３年"/></td></c:if>
+				<c:if test="${participa.grade == 4}"><td><c:out value="４年"/></td></c:if>
+				<c:if test="${participa.grade == 5}"><td><c:out value="M1"/></td></c:if>
+				<c:if test="${participa.grade == 6}"><td><c:out value="OB１年"/></td></c:if>
+				<c:if test="${participa.grade == 7}"><td><c:out value="OB２年"/></td></c:if>
+				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
+				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
+
+				<td><c:out value="${participa.participantName}"/></td>
+				<td><c:out value="${participa.roomNumber}"/></td>
 				</tr>
 			</c:if>
 		</c:forEach>
@@ -121,16 +140,25 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>番号</th>
+			<th>学年</th>
 			<th>名前</th>
 			<th>部屋の名前</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="participant" items="${participants}">
-			<c:if test="${participant.roomNumber=='C' }">
+		<c:forEach var="participa" items="${participants}">
+			<c:if test="${participa.roomNumber=='C' }">
 				<tr>
-				<td><c:out value="${participant.number}"/></td>
+				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
+				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
+				<c:if test="${participa.grade == 3}"><td><c:out value="３年"/></td></c:if>
+				<c:if test="${participa.grade == 4}"><td><c:out value="４年"/></td></c:if>
+				<c:if test="${participa.grade == 5}"><td><c:out value="M1"/></td></c:if>
+				<c:if test="${participa.grade == 6}"><td><c:out value="OB１年"/></td></c:if>
+				<c:if test="${participa.grade == 7}"><td><c:out value="OB２年"/></td></c:if>
+				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
+				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
+
 				<td><c:out value="${participant.participantName}"/></td>
 				<td><c:out value="${participant.roomNumber}"/></td>
 				</tr>
@@ -154,16 +182,25 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>番号</th>
+			<th>学年</th>
 			<th>名前</th>
 			<th>部屋の名前</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="participant" items="${participants}">
-			<c:if test="${participant.roomNumber=='D' }">
+		<c:forEach var="participa" items="${participants}">
+			<c:if test="${participa.roomNumber=='B' }">
 				<tr>
-				<td><c:out value="${participant.number}"/></td>
+				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
+				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
+				<c:if test="${participa.grade == 3}"><td><c:out value="３年"/></td></c:if>
+				<c:if test="${participa.grade == 4}"><td><c:out value="４年"/></td></c:if>
+				<c:if test="${participa.grade == 5}"><td><c:out value="M1"/></td></c:if>
+				<c:if test="${participa.grade == 6}"><td><c:out value="OB１年"/></td></c:if>
+				<c:if test="${participa.grade == 7}"><td><c:out value="OB２年"/></td></c:if>
+				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
+				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
+
 				<td><c:out value="${participant.participantName}"/></td>
 				<td><c:out value="${participant.roomNumber}"/></td>
 				</tr>
@@ -178,11 +215,38 @@
 	 </c:if>
 	 <form action="./delete" method="post">
 	 	<div class="btn-group" role="group">
-			<button type="submit" class="btn btn-danger" name="number" value="${participant.number }">退室</button>
+			<button type="submit" class="btn btn-danger" name="id" value="${participant.id }">退室</button>
 		</div>
-		<h6 ><font color="red">※名前の入力ミスや急用で参加できなくなったときに押してください</font></h6>
 	</form>
 	 <p class="text-right">現在の参加人数：<c:out value="${participants.size()}"></c:out></p>
+
+	 	 <table class="table table-striped">
+	<thead>
+		<tr>
+			<th>学年</th>
+			<th>名前</th>
+			<th>部屋の名前</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="participa" items="${participants}">
+				<tr>
+				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
+				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
+				<c:if test="${participa.grade == 3}"><td><c:out value="３年"/></td></c:if>
+				<c:if test="${participa.grade == 4}"><td><c:out value="４年"/></td></c:if>
+				<c:if test="${participa.grade == 5}"><td><c:out value="M1"/></td></c:if>
+				<c:if test="${participa.grade == 6}"><td><c:out value="OB１年"/></td></c:if>
+				<c:if test="${participa.grade == 7}"><td><c:out value="OB２年"/></td></c:if>
+				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
+				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
+
+				<td><c:out value="${participa.participantName}"/></td>
+				<td><c:out value="${participa.roomNumber}"/></td>
+				</tr>
+		</c:forEach>
+	 </tbody>
+</table>
 	 </div>
 	 <div class="col-md-4"></div>
 	 </div>
