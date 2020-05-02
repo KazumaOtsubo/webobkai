@@ -31,7 +31,15 @@
 		なんかおかしいことがあったら、大坪に連絡ください<br>
 	</div>
 </div>
-	<div class="alert alert-info" role="alert">開始時刻は午後19時です！</div>
+	<c:if test="${participant.roomNumber =='A' }"><div class="alert alert-info" role="alert">開始時刻は18:50です！</div></c:if>
+	<c:if test="${participant.roomNumber =='B' }"><div class="alert alert-info" role="alert">開始時刻は18:55です！</div></c:if>
+	<c:if test="${participant.roomNumber =='C' }"><div class="alert alert-info" role="alert">開始時刻は19:00です！</div></c:if>
+	<c:if test="${participant.roomNumber =='D' }"><div class="alert alert-info" role="alert">開始時刻は18:50です！</div></c:if>
+	<c:if test="${participant.roomNumber =='E' }"><div class="alert alert-info" role="alert">開始時刻は18:55です！</div></c:if>
+	<c:if test="${participant.roomNumber =='F' }"><div class="alert alert-info" role="alert">開始時刻は19:00です！</div></c:if>
+	<c:if test="${host == 1 }">
+	<div class="alert alert-success" role="alert"><font color =red>あなたはホストです。<br>会議が始まると主催者からホストに指定されます</font></div>
+	</c:if>
 </c:if>
 <c:if test="${error != null }">
 <div class="panel panel-danger">
@@ -51,14 +59,15 @@
 		ルームA
 	</div>
 	<div class="panel-body">
-		URL：<a href="https://us04web.zoom.us/j/71148583708">https://us04web.zoom.us/j/71148583708</a>
+		URL：<a href="https://zoom.us/j/92718259358">https://zoom.us/j/92718259358</a>
 	</div>
 <table class="table table-striped">
 	<thead>
 		<tr>
 			<th>学年</th>
 			<th>名前</th>
-			<th>部屋の名前</th>
+			<th>部屋</th>
+			<th>ホスト</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -76,7 +85,8 @@
 				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
 
 				<td><c:out value="${participa.participantName}"/></td>
-				<td><c:out value="${participa.roomNumber}"/></td>
+				<td>ルーム<c:out value="${participa.roomNumber}"/></td>
+				<td><c:if test="${participa.host == 1 }">〇</c:if></td>
 				</tr>
 			</c:if>
 		</c:forEach>
@@ -93,14 +103,15 @@
 		ルームＢ
 	</div>
 	<div class="panel-body">
-		URL：<a href="https://us04web.zoom.us/j/77955193872">https://us04web.zoom.us/j/77955193872</a>
+		URL：<a href="　https://us04web.zoom.us/j/76335126367">https://us04web.zoom.us/j/76335126367</a>
 	</div>
 <table class="table table-striped">
 	<thead>
 		<tr>
 			<th>学年</th>
 			<th>名前</th>
-			<th>部屋の名前</th>
+			<th>部屋</th>
+			<th>ホスト</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -118,7 +129,8 @@
 				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
 
 				<td><c:out value="${participa.participantName}"/></td>
-				<td><c:out value="${participa.roomNumber}"/></td>
+				<td>ルーム<c:out value="${participa.roomNumber}"/></td>
+				<td><c:if test="${participa.host == 1 }">〇</c:if></td>
 				</tr>
 			</c:if>
 		</c:forEach>
@@ -135,14 +147,15 @@
 		ルームC
 	</div>
 	<div class="panel-body">
-		URL：<a href="https://us04web.zoom.us/j/72423078625">https://us04web.zoom.us/j/72423078625</a>
+		URL：<a href="https://zoom.us/j/92718259358">https://zoom.us/j/92718259358</a>
 	</div>
 <table class="table table-striped">
 	<thead>
 		<tr>
 			<th>学年</th>
 			<th>名前</th>
-			<th>部屋の名前</th>
+			<th>部屋</th>
+			<th>ホスト</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -160,7 +173,8 @@
 				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
 
 				<td><c:out value="${participa.participantName}"/></td>
-				<td><c:out value="${participa.roomNumber}"/></td>
+				<td>ルーム<c:out value="${participa.roomNumber}"/></td>
+				<td><c:if test="${participa.host == 1 }">〇</c:if></td>
 				</tr>
 			</c:if>
 		</c:forEach>
@@ -177,14 +191,15 @@
 		ルームD
 	</div>
 	<div class="panel-body">
-		URL：<a href="https://us04web.zoom.us/j/79595812583">https://us04web.zoom.us/j/79595812583</a>
+		URL：<a href="https://us04web.zoom.us/j/77955193872">https://us04web.zoom.us/j/77955193872</a>
 	</div>
 <table class="table table-striped">
 	<thead>
 		<tr>
 			<th>学年</th>
 			<th>名前</th>
-			<th>部屋の名前</th>
+			<th>部屋</th>
+			<th>ホスト</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -202,7 +217,8 @@
 				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
 
 				<td><c:out value="${participa.participantName}"/></td>
-				<td><c:out value="${participa.roomNumber}"/></td>
+				<td>ルーム<c:out value="${participa.roomNumber}"/></td>
+				<td><c:if test="${participa.host == 1 }">〇</c:if></td>
 				</tr>
 			</c:if>
 		</c:forEach>
@@ -213,6 +229,95 @@
 	</div>
 </div>
 	 </c:if>
+	 	 <c:if test = "${participant.roomNumber == 'E'}">
+<div class="panel panel-warning">
+	<div class="panel-heading">
+		ルームE
+	</div>
+	<div class="panel-body">
+		URL：<a href="https://us04web.zoom.us/j/78473689919">https://us04web.zoom.us/j/78473689919</a>
+	</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>学年</th>
+			<th>名前</th>
+			<th>部屋</th>
+			<th>ホスト</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="participa" items="${participants}">
+			<c:if test="${participa.roomNumber=='E' }">
+				<tr>
+				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
+				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
+				<c:if test="${participa.grade == 3}"><td><c:out value="３年"/></td></c:if>
+				<c:if test="${participa.grade == 4}"><td><c:out value="４年"/></td></c:if>
+				<c:if test="${participa.grade == 5}"><td><c:out value="M1"/></td></c:if>
+				<c:if test="${participa.grade == 6}"><td><c:out value="OB１年"/></td></c:if>
+				<c:if test="${participa.grade == 7}"><td><c:out value="OB２年"/></td></c:if>
+				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
+				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
+
+				<td><c:out value="${participa.participantName}"/></td>
+				<td>ルーム<c:out value="${participa.roomNumber}"/></td>
+				<td><c:if test="${participa.host == 1 }">〇</c:if></td>
+				</tr>
+			</c:if>
+		</c:forEach>
+	 </tbody>
+</table>
+<div class="panel-footer">
+		このアプリ、シンプルに見えるけど結構大変だったからね！！<br>
+	</div>
+</div>
+	 </c:if>
+	 	 <c:if test = "${participant.roomNumber == 'F'}">
+<div class="panel panel-warning">
+	<div class="panel-heading">
+		ルームF
+	</div>
+	<div class="panel-body">
+		URL：<a href="https://us04web.zoom.us/j/72870663905">https://us04web.zoom.us/j/72870663905</a>
+	</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>学年</th>
+			<th>名前</th>
+			<th>部屋</th>
+			<th>ホスト</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="participa" items="${participants}">
+			<c:if test="${participa.roomNumber=='F' }">
+				<tr>
+				<c:if test="${participa.grade == 1}"><td><c:out value="１年"/></td></c:if>
+				<c:if test="${participa.grade == 2}"><td><c:out value="２年"/></td></c:if>
+				<c:if test="${participa.grade == 3}"><td><c:out value="３年"/></td></c:if>
+				<c:if test="${participa.grade == 4}"><td><c:out value="４年"/></td></c:if>
+				<c:if test="${participa.grade == 5}"><td><c:out value="M1"/></td></c:if>
+				<c:if test="${participa.grade == 6}"><td><c:out value="OB１年"/></td></c:if>
+				<c:if test="${participa.grade == 7}"><td><c:out value="OB２年"/></td></c:if>
+				<c:if test="${participa.grade == 8}"><td><c:out value="OB３年"/></td></c:if>
+				<c:if test="${participa.grade == 9}"><td><c:out value="その他"/></td></c:if>
+
+				<td><c:out value="${participa.participantName}"/></td>
+				<td>ルーム<c:out value="${participa.roomNumber}"/></td>
+				<td><c:if test="${participa.host == 1 }">〇</c:if></td>
+				</tr>
+			</c:if>
+		</c:forEach>
+	 </tbody>
+</table>
+<div class="panel-footer">
+		このアプリ、シンプルに見えるけど結構大変だったからね！！<br>
+	</div>
+</div>
+	 </c:if>
+
 	 <form action="./delete" method="post">
 	 	<div class="btn-group" role="group">
 			<button type="submit" class="btn btn-danger" name="id" value="${participant.id }">退室</button>
@@ -225,7 +330,8 @@
 		<tr>
 			<th>学年</th>
 			<th>名前</th>
-			<th>部屋の名前</th>
+			<th>部屋</th>
+			<th>ホスト</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -243,6 +349,7 @@
 
 				<td><c:out value="${participa.participantName}"/></td>
 				<td><c:out value="${participa.roomNumber}"/></td>
+				<td><c:if test="${participa.host == 1 }">〇</c:if></td>
 				</tr>
 		</c:forEach>
 	 </tbody>

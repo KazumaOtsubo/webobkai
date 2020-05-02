@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DistributerDao;
+import model.Participant;
 
 /**
  * Servlet implementation class DleteServlet
@@ -47,13 +48,13 @@ public class DeleteServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		if(request.getParameter("id") != null) {
-			String url = "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_791ec9286655973?useSSL=false&characterEncoding=UTF-8&serverTimezone=JST";
-			String user = "b887e48668536b";
-			String pass = "6c9e7bf9";
+//			String url = "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_791ec9286655973?useSSL=false&characterEncoding=UTF-8&serverTimezone=JST";
+//			String user = "b887e48668536b";
+//			String pass = "6c9e7bf9";
 
-//			String url = "jdbc:mysql://localhost:3306/example?useSSL=false&characterEncoding=UTF-8&serverTimezone=JST";
-//			String user = "root";
-//			String pass = "root";
+			String url = "jdbc:mysql://localhost:3306/example?useSSL=false&characterEncoding=UTF-8&serverTimezone=JST";
+			String user = "root";
+			String pass = "root";
 			int id = Integer.parseInt(request.getParameter("id"));
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
@@ -62,6 +63,9 @@ public class DeleteServlet extends HttpServlet {
 				DistributerDao dao = new DistributerDao(con);
 
 				dao.deleteParticipant(id);
+				Participant participant = dao.getParticipant(id);
+				int giveId = dao.findExcludeMinId(participant.getRoomNumber(), id);
+				dao.giveHost(giveId);
 
 //				Cookie cookies[] = request.getCookies();
 //				if(cookies != null) {

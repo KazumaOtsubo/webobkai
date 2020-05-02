@@ -19,6 +19,8 @@ public class Participant {
 
 	private int grade;
 
+	private int host;
+
 
 	public Participant() {
 
@@ -98,5 +100,13 @@ public class Participant {
 
 	public void setGrade(int grade) {
 		this.grade = grade;
+	}
+
+	public int getHost() {
+		return host;
+	}
+
+	public void setHost(int host) {
+		this.host = host;
 	}
 }

@@ -34,6 +34,31 @@ public class DistributerDao {
 				participant.setRoomNumber(rs.getString("ROOMNUMBER"));
 				participant.setDeleteflag(rs.getInt("deleteflag"));
 				participant.setUpdateAt(rs.getTimestamp("updatedat"));
+				participant.setHost(rs.getInt("host"));
+			}
+			return participant;
+		}
+
+	}
+
+	public Participant getParticipant(int id) throws SQLException {
+		String sql =  "SELECT * FROM PARTICIPANT WHERE id = ?";
+		Participant participant = new Participant();
+
+		try(PreparedStatement ps = con.prepareStatement(sql)){
+			ps.setInt(1, id);
+
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				participant.setId(rs.getInt("ID"));
+				participant.setPassword(rs.getString("PASSWORD"));
+				participant.setNumber(rs.getInt("NUMBER"));
+				participant.setGrade(rs.getInt("GRADE"));
+				participant.setParticipantName(rs.getString("PARTICIPANTNAME"));
+				participant.setRoomNumber(rs.getString("ROOMNUMBER"));
+				participant.setDeleteflag(rs.getInt("deleteflag"));
+				participant.setUpdateAt(rs.getTimestamp("updatedat"));
+				participant.setHost(rs.getInt("host"));
 			}
 			return participant;
 		}
@@ -88,6 +113,7 @@ public class DistributerDao {
 				participant.setRoomNumber(rs.getString("ROOMNUMBER"));
 				participant.setDeleteflag(rs.getInt("deleteflag"));
 				participant.setUpdateAt(rs.getTimestamp("updatedat"));
+				participant.setHost(rs.getInt("host"));
 
 				participants.add(participant);
 			}
@@ -101,6 +127,19 @@ public class DistributerDao {
 
 		try(PreparedStatement ps = con.prepareStatement(sql)){
 			ps.setString(1, participant.getRoomNumber());
+			ps.setInt(2, participant.getId());
+			System.out.println(participant.getRoomNumber());
+
+			ps.executeUpdate();
+
+			}
+		}
+
+	public void setHost(Participant participant) throws SQLException {
+		String sql =  "UPDATE PARTICIPANT set host=? where id=?";
+
+		try(PreparedStatement ps = con.prepareStatement(sql)){
+			ps.setInt(1, 1);
 			ps.setInt(2, participant.getId());
 			System.out.println(participant.getRoomNumber());
 
@@ -155,8 +194,37 @@ public class DistributerDao {
 			}
 		}
 
+	public int findMinId( String roomNumber) throws SQLException {
+		String sql =  "SELECT MIN(id) as min FROM participant WHERE roomnumber = ? and deleteflag = 0";
+		int min = 0;
+		try(PreparedStatement ps = con.prepareStatement(sql)){
+			ps.setString(1, roomNumber);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				min = (rs.getInt("min"));
+			}
+		}
+		return min;
+	}
+
+	public int findExcludeMinId( String roomNumber, int id) throws SQLException {
+		String sql =  "SELECT MIN(id) as min FROM participant WHERE roomnumber = ? and deleteflag = 0 AND id NOT IN (?)";
+		int min = 0;
+		try(PreparedStatement ps = con.prepareStatement(sql)){
+			ps.setString(1, roomNumber);
+			ps.setInt(2,  id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				min = (rs.getInt("min"));
+			}
+		}
+		return min;
+	}
+
+
+
 	public void deleteParticipant(int id) throws SQLException {
-		String sql =  "UPDATE PARTICIPANT SET deleteflag = ? WHERE id = ?";
+		String sql =  "UPDATE PARTICIPANT SET deleteflag = ? ,host = 0 WHERE id = ?";
 
 		try(PreparedStatement ps = con.prepareStatement(sql)){
 			ps.setInt(1, 1);
@@ -164,5 +232,18 @@ public class DistributerDao {
 			ps.executeUpdate();
 		}
 	}
+
+
+	public void giveHost(int id) throws SQLException {
+		String sql =  "UPDATE PARTICIPANT set host=? where id=?";
+
+		try(PreparedStatement ps = con.prepareStatement(sql)){
+			ps.setInt(1, 1);
+			ps.setInt(2, id);
+
+			ps.executeUpdate();
+
+			}
+		}
 
 }
