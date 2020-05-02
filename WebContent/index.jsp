@@ -38,7 +38,7 @@
 			<input type="text" name="password" class="form-control" placeholder="パスワードを入力してください" required>
 		</div>
 		<h6 class="text-right" >
-		<a href="/webobkai/login.jsp" ><font color="red">※初回の方はこちらから</font></a>
+		<a href="/login.jsp" ><font color="red">※初回の方はこちらから</font></a>
 		</h6>
 		<br>
 		<div class="btn-group" role="group">
