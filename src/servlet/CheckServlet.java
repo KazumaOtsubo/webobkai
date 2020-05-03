@@ -119,7 +119,7 @@ public class CheckServlet extends HttpServlet {
 
 			//ROOM A
 			//部屋を取得
-			if(dao.countRoomNumber("A") < 5 ) {
+			if(dao.countRoomNumber("A") < 6 ) {
 				participant.setRoomNumber("A");
 				dao.setNumber(participant);
 				//ホストの設定
@@ -131,7 +131,7 @@ public class CheckServlet extends HttpServlet {
 				//参加者全員を取得
 				participants = dao.findAll();
 			}else if(participant.getRoomNumber() != null && participant.getRoomNumber() .equals("A")) {
-				if(dao.countRoomNumber("A") -1 < 5) {
+				if(dao.countRoomNumber("A") -1 < 6) {
 					participant.setRoomNumber("A");
 					dao.setNumber(participant);
 					//ホストの設定
@@ -146,7 +146,7 @@ public class CheckServlet extends HttpServlet {
 
 
 			//ROOM B
-			}else if(dao.countRoomNumber("B") < 5) {
+			}else if(dao.countRoomNumber("B") < 6) {
 				participant.setRoomNumber("B");
 				dao.setNumber(participant);
 				//ホストの設定
@@ -160,7 +160,7 @@ public class CheckServlet extends HttpServlet {
 				participants = dao.findAll();
 
 			}else if(participant.getRoomNumber() != null && participant.getRoomNumber() .equals("B")) {
-				if(dao.countRoomNumber("B") -1 < 5) {
+				if(dao.countRoomNumber("B") -1 < 6) {
 					participant.setRoomNumber("B");
 					dao.setNumber(participant);
 					//ホストの設定
@@ -176,7 +176,7 @@ public class CheckServlet extends HttpServlet {
 
 
 			//ROOM C
-			}else if(dao.countRoomNumber("C") < 5) {
+			}else if(dao.countRoomNumber("C") < 6) {
 				participant.setRoomNumber("C");
 				dao.setNumber(participant);
 				//ホストの設定
@@ -189,7 +189,7 @@ public class CheckServlet extends HttpServlet {
 				participants = dao.findAll();
 
 			}else if(participant.getRoomNumber() != null && participant.getRoomNumber() .equals("C")) {
-				if(dao.countRoomNumber("C") -1 < 5) {
+				if(dao.countRoomNumber("C") -1 < 6) {
 					participant.setRoomNumber("C");
 					dao.setNumber(participant);
 					//ホストの設定
@@ -203,7 +203,7 @@ public class CheckServlet extends HttpServlet {
 				participants = dao.findAll();
 
 			//ROOM D
-			}else if(dao.countRoomNumber("D") < 5) {
+			}else if(dao.countRoomNumber("D") < 6) {
 				participant.setRoomNumber("D");
 				dao.setNumber(participant);
 				//ホストの設定
@@ -216,7 +216,7 @@ public class CheckServlet extends HttpServlet {
 				participants = dao.findAll();
 
 			}else if(participant.getRoomNumber() != null && participant.getRoomNumber() .equals("D")) {
-				if(dao.countRoomNumber("D") -1 < 5) {
+				if(dao.countRoomNumber("D") -1 < 6) {
 					participant.setRoomNumber("D");
 					dao.setNumber(participant);
 					//ホストの設定
@@ -231,7 +231,7 @@ public class CheckServlet extends HttpServlet {
 
 
 				//ROOM E
-			}else if(dao.countRoomNumber("E") < 5) {
+			}else if(dao.countRoomNumber("E") < 6) {
 				participant.setRoomNumber("E");
 				dao.setNumber(participant);
 				//ホストの設定
@@ -244,7 +244,7 @@ public class CheckServlet extends HttpServlet {
 				participants = dao.findAll();
 
 			}else if(participant.getRoomNumber() != null && participant.getRoomNumber() .equals("E")) {
-				if(dao.countRoomNumber("E") -1 < 5 ) {
+				if(dao.countRoomNumber("E") -1 < 6 ) {
 					participant.setRoomNumber("E");
 					dao.setNumber(participant);
 					//ホストの設定
@@ -258,7 +258,7 @@ public class CheckServlet extends HttpServlet {
 				participants = dao.findAll();
 
 				//ROOM F
-			}else if(dao.countRoomNumber("F") < 5) {
+			}else if(dao.countRoomNumber("F") < 6) {
 				participant.setRoomNumber("F");
 				dao.setNumber(participant);
 				//ホストの設定
@@ -271,7 +271,7 @@ public class CheckServlet extends HttpServlet {
 				participants = dao.findAll();
 
 			}else if(participant.getRoomNumber() != null && participant.getRoomNumber() .equals("F")) {
-				if(dao.countRoomNumber("F") -1 < 5 ) {
+				if(dao.countRoomNumber("F") -1 < 6 ) {
 					participant.setRoomNumber("F");
 					dao.setNumber(participant);
 					//ホストの設定
