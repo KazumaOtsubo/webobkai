@@ -147,7 +147,7 @@
 		ルームC
 	</div>
 	<div class="panel-body">
-		URL：<a href="https://zoom.us/j/92718259358">https://zoom.us/j/92718259358</a>
+		URL：<a href="https://zoom.us/j/99117825461">https://zoom.us/j/99117825461</a>
 	</div>
 <table class="table table-striped">
 	<thead>
