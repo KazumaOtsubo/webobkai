@@ -103,7 +103,7 @@
 		ルームＢ
 	</div>
 	<div class="panel-body">
-		URL：<a href="　https://us04web.zoom.us/j/76335126367">https://us04web.zoom.us/j/76335126367</a>
+		URL：<a href="https://us04web.zoom.us/j/76335126367">https://us04web.zoom.us/j/76335126367</a>
 	</div>
 <table class="table table-striped">
 	<thead>
